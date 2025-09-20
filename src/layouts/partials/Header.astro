@@ -1,0 +1,143 @@
+---
+import Logo from "@/components/Logo.astro";
+import NavDropdown from "@/components/NavDropdown";
+import config from "@/config/config.json";
+import menu from "@/config/menu.json";
+import { IoSearch } from "react-icons/io5";
+
+export interface ChildNavigationLink {
+  name: string;
+  url: string;
+}
+
+export interface NavigationLink {
+  name: string;
+  url: string;
+  hasChildren?: boolean;
+  children?: ChildNavigationLink[];
+}
+
+const { main }: { main: NavigationLink[] } = menu;
+const { settings } = config;
+const { pathname } = Astro.url;
+---
+
+<header
+  id="main-header"
+  class={`header z-30 transition-all duration-300 ${settings.sticky_header && "sticky top-0 border-border border-b"}`}
+>
+  <nav class="navbar container">
+    <!-- logo -->
+    <div class="order-0">
+      <Logo />
+    </div>
+    <!-- navbar toggler -->
+    <input id="nav-toggle" type="checkbox" class="hidden" />
+    <label
+      for="nav-toggle"
+      class="cursor-pointer flex items-center lg:hidden text-text-dark lg:order-1"
+    >
+      <svg id="show-button" class="h-6 fill-current block" viewBox="0 0 20 20">
+        <title>Menu Open</title>
+        <path d="M0 3h20v2H0V3z m0 6h20v2H0V9z m0 6h20v2H0V0z"></path>
+      </svg>
+      <svg id="hide-button" class="h-6 fill-current hidden" viewBox="0 0 20 20">
+        <title>Menu Close</title>
+        <polygon
+          points="11 9 22 9 22 11 11 11 11 22 9 22 9 11 -2 11 -2 9 9 9 9 -2 11 -2"
+          transform="rotate(45 10 10)"></polygon>
+      </svg>
+    </label>
+    <!-- /navbar toggler -->
+    <ul
+      id="nav-menu"
+      class="navbar-nav hidden w-full pb-6 lg:flex lg:w-auto lg:gap-x-2 lg:pb-0 xl:gap-x-6"
+    >
+      {
+        main.map((menu) => (
+          <>
+            {menu.hasChildren ? (
+              <NavDropdown menu={menu} pathname={pathname} client:load />
+            ) : (
+              <li class="nav-item">
+                <a
+                  href={menu.url}
+                  class={`nav-link block ${
+                    (pathname === `${menu.url}/` || pathname === menu.url) &&
+                    "active"
+                  }`}
+                >
+                  {menu.name}
+                </a>
+              </li>
+            )}
+          </>
+        ))
+      }
+      {
+        settings.search && (
+          <button
+            class="text-text-dark hover:text-primary inline-block text-xl"
+            aria-label="search"
+            data-search-trigger
+          >
+            <IoSearch />
+          </button>
+        )
+      }
+    </ul>
+  </nav>
+</header>
+
+<script>
+  document.addEventListener("astro:page-load", () => {
+    const logoDefault = document.querySelector("#logo-default") as HTMLElement;
+    const logoHorizontal = document.querySelector("#logo-horizontal") as HTMLElement;
+    const header = document.querySelector("#main-header") as HTMLElement;
+    const navMenu = document.querySelector("#nav-menu") as HTMLElement;
+    
+    if (!logoDefault || !logoHorizontal || !header) return;
+    
+    let isScrolled = false;
+    
+    function handleScroll() {
+      const scrollY = window.scrollY;
+      const scrollDownThreshold = 150; // Show horizontal logo after scrolling 150px down
+      const scrollUpThreshold = 50; // Switch back to normal logo when scrolling up to 50px
+      
+      if (!isScrolled && scrollY > scrollDownThreshold) {
+        isScrolled = true;
+        // Animate to horizontal logo
+        logoDefault.style.transform = "translateY(-10px) scale(0.9)";
+        logoDefault.style.opacity = "0";
+        logoHorizontal.style.transform = "translateY(0) scale(1)";
+        logoHorizontal.style.opacity = "1";
+        header.classList.add("header-scrolled");
+        // Remove padding classes that make header tall
+        if (navMenu) {
+          navMenu.classList.remove("pb-6");
+          navMenu.classList.add("pb-0");
+        }
+      } else if (isScrolled && scrollY < scrollUpThreshold) {
+        isScrolled = false;
+        // Animate to default logo
+        logoHorizontal.style.transform = "translateY(10px) scale(0.9)";
+        logoHorizontal.style.opacity = "0";
+        logoDefault.style.transform = "translateY(0) scale(1)";
+        logoDefault.style.opacity = "1";
+        header.classList.remove("header-scrolled");
+        // Restore original padding
+        if (navMenu) {
+          navMenu.classList.add("pb-6");
+          navMenu.classList.remove("pb-0");
+        }
+      }
+    }
+    
+    // Add scroll listener
+    window.addEventListener("scroll", handleScroll);
+    
+    // Initial check
+    handleScroll();
+  });
+</script>

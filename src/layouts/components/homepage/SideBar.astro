@@ -1,0 +1,125 @@
+---
+import social from "@/config/social.json";
+import { getSinglePage } from "@/lib/contentParser.astro";
+import { getAllTaxonomy, getTaxonomy } from "@/lib/taxonomyParser.astro";
+import dateFormat from "@/lib/utils/dateFormat";
+import { sortByDate } from "@/lib/utils/sortFunctions";
+import { humanize, markdownify, slugify } from "@/lib/utils/textConverter";
+import { FaMagnifyingGlass, FaPaperPlane } from "react-icons/fa6";
+import ImageMod from "../ImageMod.astro";
+import Social from "../Social.astro";
+
+const posts = await getSinglePage("post");
+const sortedPosts = sortByDate(posts);
+const categories = await getTaxonomy("post", "categories");
+const allCategories = await getAllTaxonomy("post", "categories");
+const tags = await getTaxonomy("post", "tags");
+
+// Check if we're on the homepage
+const isHomepage = Astro.url.pathname === '/' || Astro.url.pathname === '';
+---
+
+<div class="ps-0 lg:ps-4">
+  <!-- search -->
+  <div class="widget">
+    <h4 class="widget-title h5"><span>Search</span></h4>
+
+    <div class="widget-search" aria-label="search" data-search-trigger>
+      <input
+        class="search-query focus:outline-none focus:ring-0 focus:shadow-none placeholder:text-sm"
+        name="s"
+        type="search"
+        autocomplete="off"
+        placeholder="Type & Hit Enter..."
+      />
+      <button class="widget-search-btn" aria-label="Search Post">
+        <FaMagnifyingGlass />
+      </button>
+    </div>
+  </div>
+
+  <!-- author about -->
+  <div class="widget widget-about">
+    <h5 class="widget-title"><span>Hi, I'm Martin Woodward</span></h5>
+    <div class="flex justify-start gap-4">
+      <ImageMod
+        src="/images/martin-headshot.jpg"
+        alt="author"
+        decoding={"auto"}
+        class="object-cover rounded-lg max-h-[130px] w-[100px]"
+        height={3840}
+        width={3001}
+        format="webp"
+      />
+      <div class="mb-2">
+        <span class="block mb-3 text-[14px]">
+          Maker, Developer, Open Source Advocate and Vice President of Developer Relations at GitHub. 
+        </span>
+        <Social source={social.main} className="social-icons mb-3" />
+        <a
+          href="/about"
+          class="btn btn-primary p-1 px-3 rounded mt-2">About Me</a
+        >
+      </div>
+    </div>
+  </div>
+
+  <!-- latest article -->
+  {!isHomepage && (
+    <div class="widget">
+      <h5 class="widget-title"><span>Latest Posts</span></h5>
+      <ul class="list-unstyled widget-list mb-0">
+        {
+          sortedPosts.slice(0, 3).map((post) => (
+            <li class="flex gap-5 widget-list-post items-start">
+              <div class="widget-list-post-thumb">
+                <ImageMod
+                  width={0}
+                  height={0}
+                  src={post.data.images[0]}
+                  alt={post.data.title}
+                  format="webp"
+                />
+              </div>
+
+              <div class="media-body">
+                <h6>
+                  <a
+                    href={`/${"post"}/${post.id}`}
+                    set:html={markdownify(post.data.title)}
+                  />
+                </h6>
+                <small>{dateFormat(post.data.date)}</small>
+              </div>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  )}
+
+  <!-- categories -->
+  <div class="widget">
+    <h5 class="widget-title"><span>Categories</span></h5><ul
+      class="list-unstyled widget-list"
+    >
+      {
+        categories.sort().map((category: string) => {
+          const count = allCategories.filter((c) => c === category).length;
+          return (
+            <li>
+              <a
+                href={`/categories/${slugify(category)}`}
+                class="flex text-[14px]"
+              >
+                {category.toLowerCase()}
+                <small class="ms-auto">({count})</small>
+              </a>
+            </li>
+          );
+        })
+      }
+    </ul>
+  </div>
+
+</div>

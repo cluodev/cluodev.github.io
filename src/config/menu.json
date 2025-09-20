@@ -1,0 +1,69 @@
+{
+  "main": [
+    {
+      "name": "Home",
+      "url": "/",
+      "hasChildren": false
+    },
+    {
+      "name": "Categories",
+      "url": "/categories"
+    },
+    {
+      "name": "About",
+      "url": "/about"
+    }
+  ],
+  "footer": [
+    {
+      "name": "Quick Links",
+      "url": "",
+      "hasChildren": true,
+      "children": [
+        {
+          "name": "About Martin",
+          "url": "/about"
+        },
+        {
+          "name": "Bio & Headshots",
+          "url": "/about"
+        },
+        {
+          "name": "Contact",
+          "url": "/contact"
+        },
+        {
+          "name": "GitHub",
+          "url": "https://github.com/MartinWoodward"
+        }
+      ]
+    },
+    {
+      "name": "Social Links",
+      "url": "",
+      "hasChildren": true,
+      "children": [
+        {
+          "name": "Bluesky",
+          "url": "https://bsky.app/profile/martin.social"
+        },
+        {
+          "name": "Linkedin",
+          "url": "https://www.linkedin.com/in/martinwoodward"
+        },
+        {
+          "name": "Twitter",
+          "url": "https://x.com/martinwoodward"
+        },
+        {
+          "name": "Threads",
+          "url": "https://www.threads.com/@mw00dward"
+        },
+        {
+          "name": "Mastodon",
+          "url": "https://hachyderm.io/@martinwoodward"
+        }
+      ]
+    }
+  ]
+}

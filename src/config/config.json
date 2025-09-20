@@ -1,0 +1,42 @@
+{
+  "site": {
+    "title": "Cluodev",
+    "base_url": "https://www.cluodev.com",
+    "base_path": "/",
+    "trailing_slash": false,
+    "favicon": "/images/favicon.png",
+    "logo": "/images/logo.png",
+    "logo_width": "281",
+    "logo_height": "143",
+    "logo_horizontal": "/images/logo-horizontal.png",
+    "logo_horizontal_width": "250",
+    "logo_horizontal_height": "40",
+    "logo_text": "Charles Luo"
+  },
+
+  "settings": {
+    "search": true,
+    "sticky_header": true,
+    "pagination": 10,
+    "max_pages_to_show": 5,
+    "summary_length": 320,
+    "default_layout": "gridRight"
+  },
+
+  "params": {
+    "contact_form_action": "#",
+    "copyright": "(C) Copyright Charles Luo, 2025. All rights reserved."
+  },
+
+  "navigation_button": {
+    "enable": true,
+    "label": "Get Started",
+    "link": "https://github.com/teamosis-products/logbook-astro"
+  },
+
+  "metadata": {
+    "meta_author": "Charles Luo",
+    "meta_image": "/images/og-image.png",
+    "meta_description": "The Personal Blog of Charles Luo, VP of Developer Relations @ GitHub"
+  }
+}

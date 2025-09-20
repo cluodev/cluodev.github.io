@@ -1,0 +1,42 @@
+{
+  "colors": {
+    "default": {
+      "theme_color": {
+        "primary": "#ce8460",
+        "body": "#fff",
+        "border": "#ddd",
+        "light": "#f0f0f0"
+      },
+      "text_color": {
+        "text": "#696c6d",
+        "text-dark": "#1c1d1f",
+        "text-light": "#888c8e"
+      }
+    },
+    "categories": {
+      "ai": "#10b981",
+      "books": "#f59e0b",
+      "dotnet": "#8b5cf6",
+      "gadgets": "#ef4444",
+      "git": "#f97316",
+      "github": "#6366f1",
+      "maker": "#84cc16",
+      "personal": "#ec4899",
+      "podcast": "#06b6d4",
+      "programming": "#8b5cf6",
+      "technology": "#3b82f6",
+      "web": "#10b981",
+      "teamprise": "#0ea5e9",
+      "tfs": "#0ea5e9"
+    }
+  },
+  "fonts": {
+    "font_family": {
+      "primary": "Mona Sans:wght@400",
+      "primary_type": "sans-serif",
+      "secondary": "Hubot Sans:wght@400",
+      "secondary_type": "sans-serif"
+    },
+    "font_size": { "base": "20", "scale": "1.1" }
+  }
+}

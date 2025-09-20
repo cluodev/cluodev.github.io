@@ -1,0 +1,94 @@
+---
+import config from "@/config/config.json";
+import dateFormat from "@/lib/utils/dateFormat";
+import { humanize, plainify, slugify } from "@/lib/utils/textConverter";
+import { FaUser } from "react-icons/fa6";
+import ImageMod from "../ImageMod.astro";
+
+const { summary_length }: { summary_length: number } = config.settings;
+
+const post = Astro.props;
+
+const { images, title, author, date, categories, tags } = post?.post?.data;
+const { id, body } = post?.post;
+
+// Check if image exists using the same logic as ImageMod
+const hasValidImage = images && images[0] && (() => {
+  const src = `/public${images[0]}`;
+  const imageGlob = import.meta.glob("/public/images/**/*.{jpeg,jpg,png,gif}");
+  return imageGlob[src] ? true : false;
+})();
+
+// Smart truncation function that truncates to nearest sentence or whole word
+function smartTruncate(text: string, maxLength: number): string {
+  if (!text || text.length <= maxLength) return text;
+  
+  // Remove MDX/JSX import statements and other coding directives
+  const cleanedText = text
+    .replace(/^import\s+.*?from\s+["'].*?["'];?\s*$/gm, '') // Remove import statements
+    .replace(/^export\s+.*?;?\s*$/gm, '') // Remove export statements
+    .replace(/^\s*<[A-Z][^>]*>.*?<\/[A-Z][^>]*>\s*$/gm, '') // Remove JSX components on their own lines
+    .replace(/\n\s*\n/g, '\n') // Remove extra blank lines
+    .trim();
+  
+  if (!cleanedText || cleanedText.length <= maxLength) return cleanedText;
+  
+  // First try to truncate to nearest sentence
+  const truncated = cleanedText.slice(0, maxLength);
+  const lastSentenceEnd = Math.max(
+    truncated.lastIndexOf('.'),
+    truncated.lastIndexOf('!'),
+    truncated.lastIndexOf('?')
+  );
+  
+  if (lastSentenceEnd > maxLength * 0.5) {
+    // If we found a sentence ending and it's not too short, use it
+    return truncated.slice(0, lastSentenceEnd + 1).trim();
+  }
+  
+  // Otherwise, truncate to nearest whole word
+  const lastSpaceIndex = truncated.lastIndexOf(' ');
+  if (lastSpaceIndex > 0) {
+    return truncated.slice(0, lastSpaceIndex).trim() + '...';
+  }
+  
+  // Fallback to character truncation if no spaces found
+  return truncated.trim() + '...';
+}
+---
+
+<div class={`post-slider ${!hasValidImage ? 'hidden' : ''}`}>
+  {hasValidImage && (
+    <a href={`/post/${id}`}>
+      <ImageMod src={images[0]} alt={title} width={0} height={0} />
+    </a>
+  )}
+</div>
+<div class="card-body">
+  <h3 class="">
+    <a class="post-title" href={`/post/${id}`} set:html={title} />
+  </h3>
+  <ul class="post-meta">
+    <li class="flex justify-center items-center">
+      <FaUser className="mr-2" />
+      <a href={`/about`} set:html={author} class="meta-link" />
+    </li>
+    <li>
+      Date :{" "}
+      <span class="meta-link">
+        {dateFormat(date)}
+      </span>
+    </li>
+    <li>
+      Categories :
+      {
+        categories.map((c: string) => (
+          <a href={`/categories/${slugify(c)}`} class="ms-1 meta-link">
+            {c.toLowerCase()}</a>
+        ))
+      }
+    </li>
+  </ul>
+  <p set:html={smartTruncate(plainify(body || ""), Number(summary_length))} />
+  <a href={`/post/${id}`} class="btn btn-outline-primary"> Continue Reading </a>
+</div>

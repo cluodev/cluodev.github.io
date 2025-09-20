@@ -191,7 +191,3 @@ The source code (templates, components, styling, and build configuration) is lic
 
 ### Content License
 Blog posts and written content in the `src/content/` directory may be licensed under the [**Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0)**](https://creativecommons.org/licenses/by-sa/4.0/). This means you can share and adapt the content as long as you provide appropriate attribution and distribute any derivatives under the same license.
-
-## Contact
-
-For questions or inquiries, please reach out to Martin Woodward through the contact information available on the website.  Social media DM's are the best way but you can always email.

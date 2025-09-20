@@ -1,0 +1,65 @@
+html {
+  @apply text-base-sm md:text-base;
+}
+
+body {
+  @apply bg-body text-base font-primary font-normal leading-relaxed text-text;
+}
+
+/* Keep fallback styles for non-Primer headings */
+h1:not([class*="primer"]),
+h2:not([class*="primer"]),
+h3:not([class*="primer"]),
+h4:not([class*="primer"]),
+h5:not([class*="primer"]),
+h6:not([class*="primer"]) {
+  @apply font-secondary font-medium leading-tight text-text-dark;
+}
+
+h1:not([class*="primer"]),
+.h1:not([class*="primer"]) {
+  @apply text-h1-sm md:text-h1;
+}
+
+h2:not([class*="primer"]),
+.h2:not([class*="primer"]) {
+  @apply text-h2-sm md:text-h2;
+}
+
+h3:not([class*="primer"]),
+.h3:not([class*="primer"]) {
+  @apply text-h3-sm md:text-h3;
+}
+
+h4:not([class*="primer"]),
+.h4:not([class*="primer"]) {
+  @apply text-h4;
+}
+
+h5:not([class*="primer"]),
+.h5:not([class*="primer"]) {
+  @apply text-h5;
+}
+
+h6:not([class*="primer"]),
+.h6:not([class*="primer"]) {
+  @apply text-h6;
+}
+
+/* Keep fallback styles for non-Primer paragraphs */
+p:not([class*="primer"]) {
+  @apply font-normal text-[16px];
+}
+
+b,
+strong {
+  @apply font-semibold;
+}
+
+code {
+  @apply after:border-none;
+}
+
+blockquote > p {
+  @apply my-0;
+}

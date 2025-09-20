@@ -8,7 +8,7 @@ import remarkEmoji from 'remark-emoji';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://woodwardweb.com',
+  site: 'https://cluodev.com',
   markdown: {
     remarkPlugins: [remarkGfm, remarkEmoji],
     syntaxHighlight: 'shiki',
