@@ -9,22 +9,16 @@ draft: false
 social:
   - name: github
     icon: FaGithub
-    link: https://www.github.com/martinwoodward
+    link: https://www.github.com/cluodev
   - name: linkedin
     icon: FaLinkedin
-    link: https://www.linkedin.com/in/martinwoodward/
-  - name: bluesky
-    icon: FaBluesky
-    link: https://bsky.app/profile/martin.social
-  - name: mastodon
-    icon: FaMastodon
-    link: https://hachyderm.io/@martinwoodward
+    link: https://www.linkedin.com/in/charles-luo-1634431/
   - name: twitter
     icon: FaTwitter
-    link: https://x.com/martinwoodward
+    link: https://x.com/cqluo_g
 ---
 
-With over 20 years of experience in the software industry, I am passionate about empowering developers, building communities, and creating engaging content. As the Vice President of Developer Relations at GitHub, I lead a large and diverse team that encompasses Developer Programs, Advocacy and more at the company that is loved as the home for developers.
+a technologist with a proven track record in translating complex business problems into practical technology solutions, specialising in modern software development and delivery methodologies and processes, cloud computing, and platform engineering. 
 
 > Never waste a good crisis. <cite>- Martin Woodward<cite>
 
@@ -32,10 +26,3 @@ With over 20 years of experience in the software industry, I am passionate about
 
 #### My Skills & Experiences:
 
-Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cumto sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec.
-
-- In enim justo, rhoncus ut,
-- Curabitur ullamcorper ultricies
-- Donec vitae sapien utlorem utlorem
-
-Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna.
