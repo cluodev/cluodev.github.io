@@ -1,6 +1,6 @@
 ---
 title: "RSS Feeds"
-meta_title: "RSS Feeds - Martin Woodward"
+meta_title: "RSS Feeds - Charles Luo"
 description: "Subscribe to RSS feeds to stay updated with the latest posts"
 draft: false
 ---

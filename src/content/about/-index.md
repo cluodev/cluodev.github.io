@@ -3,7 +3,7 @@ title: "Hi, I am Charles Luo!"
 meta_title: "About"
 description: "This is the personal blog of Charles Luo"
 email: "hello@woodwardweb.com"
-image: "/images/martinwoodward-sign.jpg"
+image: "/images/aboutme-v1.png"
 draft: false
 
 social:

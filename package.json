@@ -1,8 +1,8 @@
 {
-  "name": "woodwardweb",
-  "version": "2.1.0",
-  "description": "Woodwardweb Blog",
-  "author": "Martin Woodward",
+  "name": "cluoblog",
+  "version": "0.1.0",
+  "description": "Charles Luo Blog",
+  "author": "Charles Luo",
   "license": "MIT",
   "packageManager": "yarn@1.22.22",
   "scripts": {

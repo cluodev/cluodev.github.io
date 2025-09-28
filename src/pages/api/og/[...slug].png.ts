@@ -391,7 +391,7 @@ function generateOGImageHTML(data: OGImageData): string {
       <div class="card">
         <div class="header">
           <div class="logo">
-            <img src="${getImagePath("/images/logo.png")}" alt="Martin Woodward" />
+            <img src="${getImagePath("/images/logo.png")}" alt="Charles Luo" />
           </div>
           <div class="categories">
             ${categories
@@ -423,7 +423,7 @@ function generateOGImageHTML(data: OGImageData): string {
         <div class="footer">
           <div class="author-info">
             <div class="avatar">
-              <img src="${getImagePath("/images/author.jpg")}" alt="Martin Woodward" />
+              <img src="${getImagePath("/images/author.jpg")}" alt="Charles Luo" />
             </div>
             <div class="author-details">
               <div class="author-name">${author}</div>

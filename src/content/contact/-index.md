@@ -10,5 +10,5 @@ about:
 
 mail:
   title: "Hate Forms? Write me an email"
-  address: "hello@woodwardweb.com"
+  address: "charles_luo@yahoo.com"
 ---

@@ -76,7 +76,7 @@ For each new post without a Bluesky URI:
 ---
 title: "My New Blog Post"
 date: 2025-08-06T10:00:00.000Z
-author: "Martin Woodward"
+author: "Charles Luo"
 description: "Description of the post"
 categories: ["technology"]
 tags: ["programming"]
@@ -89,7 +89,7 @@ draft: false
 ---
 title: "My New Blog Post"
 date: 2025-08-06T10:00:00.000Z
-author: "Martin Woodward"
+author: "Charles Luo"
 description: "Description of the post"
 categories: ["technology"]
 tags: ["programming"]
