@@ -2,8 +2,8 @@
 title: "Hi, I am Charles Luo!"
 meta_title: "About"
 description: "This is the personal blog of Charles Luo"
-email: "hello@woodwardweb.com"
-image: "/images/aboutme-v1.png"
+email: "charles_luo@yahoo.com"
+image: "/images/aboutme-v2.png"
 draft: false
 
 social:
@@ -18,7 +18,7 @@ social:
     link: https://x.com/cqluo_g
 ---
 
-a technologist with a proven track record in translating complex business problems into practical technology solutions, specialising in modern software development and delivery methodologies and processes, cloud computing, and platform engineering. 
+A technologist with a proven track record in translating complex business problems into practical technology solutions, specialising in modern software development and delivery methodologies and processes, cloud computing, and platform engineering. 
 
 > Never waste a good crisis. <cite>- Martin Woodward<cite>
 
