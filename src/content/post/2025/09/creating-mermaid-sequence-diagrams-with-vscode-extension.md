@@ -3,7 +3,7 @@ title: "Creating Mermaid Sequence Diagrams with VS Code Extensions"
 date: 2025-09-28T10:00:00.000Z
 # post thumb
 images:
-  - "/images/post/2025/09/creating-mermaid-sequence-diagrams-with-vscode-extension.jpg"
+  - "/images/post/2025/09/mermaid-looking-sequence-diagram.png"
 #author
 author: "Charles Luo"
 # description
