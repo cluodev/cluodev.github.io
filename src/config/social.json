@@ -3,27 +3,17 @@
     {
       "name": "github",
       "icon": "FaGithub",
-      "link": "https://www.github.com/martinwoodward"
+      "link": "https://www.github.com/cluodev"
     },
     {
       "name": "linkedin",
       "icon": "FaLinkedin",
-      "link": "https://www.linkedin.com/in/martinwoodward/"
-    },
-    {
-      "name": "bluesky",
-      "icon": "FaBluesky",
-      "link": "https://bsky.app/profile/martin.social"
+      "link": "https://www.linkedin.com/in/charles-luo-1634431"
     },
     {
       "name": "twitter",
       "icon": "FaTwitter",
-      "link": "https://x.com/martinwoodward"
-    },
-    {
-      "name": "mastodon",
-      "icon": "FaMastodon",
-      "link": "https://hachyderm.io/@martinwoodward"
+      "link": "https://x.com/cqluo_q"
     }
   ]
 }
