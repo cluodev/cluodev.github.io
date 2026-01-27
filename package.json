@@ -16,13 +16,13 @@
     "generate-og-images": "node scripts/generate-og-images.js"
   },
   "dependencies": {
-    "@astrojs/check": "^0.9.4",
+    "@astrojs/check": "^0.9.2",
     "@astrojs/mdx": "4.1.1",
     "@astrojs/react": "^4.3.0",
     "@astrojs/rss": "4.0.12",
     "@astrojs/sitemap": "^3.5.1",
     "@primer/react-brand": "^0.57.1",
-    "astro": "5.13.5",
+    "astro": "^5.16.15",
     "astro-auto-import": "^0.4.4",
     "astro-font": "^1.0.0",
     "date-fns": "^4.1.0",
