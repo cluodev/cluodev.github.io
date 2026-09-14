@@ -27,7 +27,7 @@ variable "ssh_user" {
 variable "ssh_private_key_path" {
   description = "Path to SSH private key"
   type        = string
-  default     = "~/.ssh/id_ed25519_cldsrv"
+  default     = "~/.ssh/id_ed25519_cldsrv_phi"
 }
 
 variable "domain_name" {
