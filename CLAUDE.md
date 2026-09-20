@@ -86,3 +86,4 @@ Use Tailwind CSS utility classes. Avoid custom CSS — the project uses a custom
 - Use descriptive filenames for posts and images
 - Optimize images before adding
 - Do not modify `package-lock.json` in content-only PRs
+- Do not invoke Superpowers Skills till I mention it explicitly e.g. using Superpowers
