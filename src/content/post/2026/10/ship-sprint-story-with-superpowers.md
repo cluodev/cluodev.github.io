@@ -1,13 +1,15 @@
 ---
 title: "A More Structured Way to Ship a Sprint Story with AI"
 date: 2026-10-09T10:00:00.000Z
+images:
+  - "/images/post/2026/10/structured-sprint-story-with-ai.png"
 author: "Charles Luo"
 description: "How Superpowers' skills gave an AI-assisted sprint story a clear workflow: clarify, plan, implement with TDD, review and verify."
 categories: ["technology", "development"]
 tags: ["ai", "github-copilot", "superpowers", "tdd", "workflow"]
 type: "regular"
 blueskyPostURI: ""
-draft: true
+draft: false
 ---
 
 AI coding tools can produce code quickly. But speed alone is not what I need when working on a sprint story. I need to know that the implementation addresses the agreed requirement, that its behavior is tested, and that I have verified the result.

@@ -72,15 +72,17 @@ const isHomepage = Astro.url.pathname === '/' || Astro.url.pathname === '';
         {
           sortedPosts.slice(0, 3).map((post) => (
             <li class="flex gap-5 widget-list-post items-start">
-              <div class="widget-list-post-thumb">
-                <ImageMod
-                  width={0}
-                  height={0}
-                  src={post.data.images[0]}
-                  alt={post.data.title}
-                  format="webp"
-                />
-              </div>
+              {post.data.images?.[0] && (
+                <div class="widget-list-post-thumb">
+                  <ImageMod
+                    width={0}
+                    height={0}
+                    src={post.data.images[0]}
+                    alt={post.data.title}
+                    format="webp"
+                  />
+                </div>
+              )}
 
               <div class="media-body">
                 <h6>
