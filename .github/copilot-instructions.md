@@ -37,5 +37,5 @@ npm run preview  # Preview built site
 - **Components**: Place in `src/layouts/components/`
 - **TypeScript**: Follow best practices
 - **Images**: Optimize before adding to `public/images/`
-- **PRs**: Never modify `package-lock.json` in content PRs
+- **PRs**: Never modify `yarn.lock` in content PRs
 - **Naming**: Use descriptive filenames and consistent conventions

@@ -85,5 +85,5 @@ Use Tailwind CSS utility classes. Avoid custom CSS — the project uses a custom
 - Place post images in `public/images/post/YYYY/MM/`
 - Use descriptive filenames for posts and images
 - Optimize images before adding
-- Do not modify `package-lock.json` in content-only PRs
+- Do not modify `yarn.lock` in content-only PRs
 - Do not invoke Superpowers Skills till I mention it explicitly e.g. using Superpowers

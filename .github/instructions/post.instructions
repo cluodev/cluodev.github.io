@@ -42,5 +42,5 @@ draft: false
 ```
 
 ## PR Guidelines
-- Only modify the post file itself, never `package-lock.json` or config files
+- Only modify the post file itself, never `yarn.lock` or config files
 - Use placeholder image if none provided: `/images/image-placeholder.png`

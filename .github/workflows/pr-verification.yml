@@ -33,22 +33,18 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: "20"
-          # Disable cache since we're manually clearing everything
+          node-version: "22"
           
       - name: Install dependencies
         run: |
-          # Clear npm cache to avoid platform-specific binary issues
-          npm cache clean --force
-          # Remove package-lock.json and node_modules to fix Rollup optional dependency issue
-          rm -rf package-lock.json node_modules
-          npm install
+          corepack enable
+          yarn install --frozen-lockfile
           npx playwright install-deps chromium
         working-directory: ${{ env.BUILD_PATH }}
         
       - name: Generate JSON and run Astro checks
         run: |
-          npm run generate-json
+          yarn generate-json
           npx astro check
         working-directory: ${{ env.BUILD_PATH }}
         
@@ -179,17 +175,12 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: "20"
-          # Disable cache since we're manually clearing everything
+          node-version: "22"
           
       - name: Install dependencies
         run: |
-          # Clear npm cache to avoid platform-specific binary issues
-          npm cache clean --force
-          # Remove package-lock.json and node_modules to fix Rollup optional dependency issue
-          rm -rf package-lock.json node_modules
-          # Fresh install
-          npm install
+          corepack enable
+          yarn install --frozen-lockfile
         working-directory: ${{ env.BUILD_PATH }}
         
       - name: Run Prettier format check
@@ -200,6 +191,6 @@ jobs:
         
       - name: Generate JSON and run TypeScript type check
         run: |
-          npm run generate-json
+          yarn generate-json
           npx astro check
         working-directory: ${{ env.BUILD_PATH }}
