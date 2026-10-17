@@ -29,7 +29,7 @@ Mermaid is a JavaScript-based diagramming and charting tool that renders Markdow
 - State diagrams
 - And much more
 
-The power of Mermaid lies in its text-based approach, making diagrams version-controllable and easy to maintain alongside your code.
+The power of Mermaid lies in its text-based approach, making diagrams version-controllable and easy to maintain alongside your code. For more details find out at its [official site](https://mermaid.ai/open-source/intro/index.html?utm_source=mermaid_js&utm_medium=landing_pop_up&utm_campaign=docs_v1)
 
 ## Setting Up VS Code for Mermaid
 
@@ -45,130 +45,18 @@ The most popular extension is **Mermaid Preview** by Vstirbu:
 ### 2. Alternative Extensions
 
 You can also consider these alternatives:
+
 - **Markdown Preview Mermaid Support**: Adds Mermaid support to the built-in Markdown preview
 - **Mermaid Markdown Syntax Highlighting**: Provides syntax highlighting for Mermaid code blocks
 
-## Creating Your First Sequence Diagram
+## Creating Mermaid Diagrams with Coding Agents
 
-### Basic Sequence Diagram Syntax
-
-Create a new file with `.md` extension and add a Mermaid code block:
-
-```markdown
-```mermaid
-sequenceDiagram
-    participant A as Client
-    participant B as API Gateway
-    participant C as Auth Service
-    participant D as Database
-
-    A->>B: POST /login
-    B->>C: Validate credentials
-    C->>D: Query user data
-    D-->>C: User data
-    C-->>B: Auth token
-    B-->>A: Login response
-```
-```
-
-### Key Syntax Elements
-
-**Participants**: Define the actors in your sequence
-```mermaid
-participant A as Client
-participant B as Server
-```
-
-**Messages**: Show interactions between participants
-- `A->>B`: Solid arrow (synchronous call)
-- `A-->>B`: Dashed arrow (asynchronous response)
-- `A->>+B`: Arrow with activation box
-- `A->>-B`: Arrow ending activation box
-
-**Notes**: Add explanatory text
-```mermaid
-Note over A,B: This happens simultaneously
-Note right of A: Client validates input
-```
-
-## Advanced Sequence Diagram Features
-
-### 1. Loops and Conditions
-
-```mermaid
-sequenceDiagram
-    participant U as User
-    participant S as System
-    
-    U->>S: Request data
-    alt successful case
-        S-->>U: Return data
-    else failure case
-        S-->>U: Return error
-    end
-    
-    loop Every 5 minutes
-        S->>S: Refresh cache
-    end
-```
-
-### 2. Parallel Operations
-
-```mermaid
-sequenceDiagram
-    participant A as Client
-    participant B as Service1
-    participant C as Service2
-    
-    A->>B: Request 1
-    A->>C: Request 2
-    
-    par
-        B-->>A: Response 1
-    and
-        C-->>A: Response 2
-    end
-```
-
-### 3. Activation Boxes
-
-```mermaid
-sequenceDiagram
-    participant A as Client
-    participant B as Server
-    
-    A->>+B: Start process
-    B->>+B: Internal processing
-    B->>-B: Complete processing
-    B-->>-A: Return result
-```
-
-## Real-World Example: OAuth Flow
-
-Here's a practical example showing an OAuth authentication flow:
-
-```mermaid
-sequenceDiagram
-    participant U as User
-    participant C as Client App
-    participant A as Auth Server
-    participant R as Resource Server
-    
-    U->>C: 1. Login request
-    C->>A: 2. Authorization request
-    A-->>U: 3. Login form
-    U->>A: 4. Username/Password
-    A-->>C: 5. Authorization code
-    C->>A: 6. Token request (code)
-    A-->>C: 7. Access token
-    C->>R: 8. API request (token)
-    R-->>C: 9. Protected resource
-    C-->>U: 10. Display resource
-```
+With the rise of AI coding agents e.g. Claude code, Github Copilot, Codex from OpenAI, these tools can generate Mermaid diagrams based on a simple prompt. 
 
 ## Best Practices
 
 ### 1. Keep It Simple
+
 - Focus on the main flow
 - Avoid too many participants in one diagram
 - Break complex flows into multiple diagrams
@@ -182,6 +70,7 @@ sequenceDiagram
 ```
 
 ### 3. Add Context with Notes
+
 ```mermaid
 sequenceDiagram
     participant A as Client
@@ -194,6 +83,7 @@ sequenceDiagram
 ```
 
 ### 4. Version Control Integration
+
 Since Mermaid diagrams are text-based, they work perfectly with Git:
 - Track changes in diagram logic
 - Review diagram updates in pull requests
@@ -202,10 +92,10 @@ Since Mermaid diagrams are text-based, they work perfectly with Git:
 ## VS Code Tips and Tricks
 
 ### 1. Live Preview
+
 With the Mermaid Preview extension:
 - Open your `.md` file
-- Use `Ctrl+Shift+P` (Cmd+Shift+P on Mac)
-- Type "Mermaid: Preview" to open live preview
+- Use `Ctrl+Shift+v` (Cmd+Shift+v on Mac)
 
 ### 2. Export Options
 Many extensions allow you to export diagrams as:
@@ -219,17 +109,19 @@ Enable Mermaid syntax highlighting in code blocks by installing the appropriate 
 ## Integration with Documentation
 
 ### 1. GitHub/GitLab Support
+
 Most Git platforms now support Mermaid rendering directly in Markdown files:
 
 ```markdown
-```mermaid
-sequenceDiagram
-    A->>B: Hello
-    B-->>A: Hi there!
-```
+    ```mermaid
+    sequenceDiagram
+        A->>B: Hello
+        B-->>A: Hi there!
+    ```
 ```
 
 ### 2. Documentation Sites
+
 Popular documentation generators support Mermaid:
 - GitBook
 - MkDocs
